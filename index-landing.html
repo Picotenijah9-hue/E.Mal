@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="E.Mal - Hello Kitty themed web applications. Shop, manage tasks, check time zones, and enjoy jokes!">
+<meta name="keywords" content="Hello Kitty, web apps, shopping, to-do list, clock, joke generator">
+<meta name="author" content="Picotenijah9-hue">
+<meta property="og:title" content="E.Mal - Hello Kitty Web Apps">
+<meta property="og:description" content="A collection of cute Hello Kitty themed web applications">
+<meta property="og:image" content="https://i.imgur.com/1bX5QH6.png">
+<title>E.Mal - Hello Kitty Web Apps 💖</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffe6f0 0%, #fff0f7 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1f8c 100%);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(255, 77, 166, 0.3);
+}
+
+header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.6s ease;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.95;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.app-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(255, 77, 166, 0.15);
+  transition: all 0.3s ease;
+  border: 3px solid #ff4da6;
+  animation: slideIn 0.6s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 77, 166, 0.25);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.app-card h2 {
+  color: #ff4da6;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.app-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.app-card a {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1f8c 100%);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.app-card a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 77, 166, 0.4);
+}
+
+.features {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  border: 3px solid #ff4da6;
+  box-shadow: 0 8px 25px rgba(255, 77, 166, 0.15);
+}
+
+.features h2 {
+  color: #ff4da6;
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 15px;
+}
+
+.feature-item .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.feature-item h3 {
+  color: #ff4da6;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.feature-item p {
+  color: #666;
+  font-size: 13px;
+}
+
+footer {
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1f8c 100%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+footer p {
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.github-link:hover {
+  background: white;
+  color: #ff4da6;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 36px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .features {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💖 E.Mal 💖</h1>
+  <p>A Collection of Hello Kitty Themed Web Applications</p>
+</header>
+
+<div class="container">
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-icon">🛍️</div>
+      <h2>Pink Kitty Shop</h2>
+      <p>Adorable Hello Kitty merchandise store with shopping cart and checkout functionality.</p>
+      <a href="index.html">Visit Shop</a>
+    </div>
+
+    <div class="app-card">
+      <div class="app-icon">🕐</div>
+      <h2>Hello Kitty Clock</h2>
+      <p>World clock displaying time zones across the globe with beautiful real-time updates.</p>
+      <a href="clock.html">View Clock</a>
+    </div>
+
+    <div class="app-card">
+      <div class="app-icon">😂</div>
+      <h2>Joke Generator</h2>
+      <p>Random joke generator with multiple categories. Get a laugh whenever you need one!</p>
+      <a href="joke-generator.html">Tell Jokes</a>
+    </div>
+
+    <div class="app-card">
+      <div class="app-icon">📝</div>
+      <h2>To-Do List</h2>
+      <p>Organize your tasks with this beautiful to-do list app. Data saves automatically!</p>
+      <a href="todo-list.html">Get Organized</a>
+    </div>
+  </div>
+
+  <div class="features">
+    <h2>✨ Why E.Mal?</h2>
+    <div class="features-list">
+      <div class="feature-item">
+        <div class="icon">💖</div>
+        <h3>Hello Kitty Themed</h3>
+        <p>Cute pink design inspired by everyone's favorite character</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📱</div>
+        <h3>Fully Responsive</h3>
+        <p>Works perfectly on mobile, tablet, and desktop devices</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">⚡</div>
+        <h3>Fast & Lightweight</h3>
+        <p>No downloads needed - runs directly in your browser</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">💾</div>
+        <h3>Local Storage</h3>
+        <p>Your data is saved locally on your device</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🔐</div>
+        <h3>Secure</h3>
+        <p>No personal data is sent to servers</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🎨</div>
+        <h3>Beautiful UI</h3>
+        <p>Smooth animations and modern design</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Made with 💕 by Picotenijah9-hue</p>
+  <a href="https://github.com/Picotenijah9-hue/E.Mal" class="github-link">📌 View on GitHub</a>
+  <p style="margin-top: 15px; font-size: 12px;">© 2026 E.Mal. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
