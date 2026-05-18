@@ -31,6 +31,7 @@ body::before {
   font-size: 30px;
   opacity: 0.3;
   pointer-events: none;
+  z-index: 0;
 }
 
 body::after {
@@ -41,6 +42,7 @@ body::after {
   font-size: 35px;
   opacity: 0.3;
   pointer-events: none;
+  z-index: 0;
 }
 
 header {
@@ -126,6 +128,8 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .products-grid {
@@ -385,7 +389,7 @@ header {
   font-size: 50px;
   pointer-events: none;
   animation: float 6s ease-in-out infinite;
-  z-index: 1;
+  z-index: 5;
 }
 
 .kitty-left {
